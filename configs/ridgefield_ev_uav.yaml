@@ -1,0 +1,57 @@
+experiment:
+  name: ridgefield_ev_uav_final
+  output_dir: ./outputs/ridgefield_ev_uav_final
+
+data:
+  root: ./datasets/EV-UAV
+  sensor_size: [346, 260]
+  window_ms: 8000
+  splits: {train: train, val: val, test: test}
+  voxel_resolution: [128, 96, 160]
+  max_input_events: 450000
+  num_workers: 0
+
+model:
+  input_channels: 7
+  encoder_base_channels: 16
+  latent_channels: 32
+  positional_encoding_bands: 6
+  implicit_layers: 5
+  implicit_hidden: 128
+
+train:
+  seed: 37
+  epochs: 80
+  per_gpu_batch_size: 1
+  event_queries: 32768
+  event_pos_fraction: 0.5
+  background_queries: 8192
+  background_sampling_grid: [96, 72, 48]
+  background_exclusion_radius: [0.03, 0.03, 0.08]
+  psc_patches: 64
+  psc_patch_size: [9, 9, 13]
+  psc_patch_radius: [0.03, 0.03, 0.08]
+  psc_gt_dilation_steps: 1
+  psc_skeleton_iterations: 10
+  lambda_seg: 1.0
+  lambda_dice: 1.0
+  lambda_skel: 0.5
+  lambda_vol: 0.05
+  focal_alpha: 0.75
+  focal_gamma: 2.0
+  lr: 0.001
+  min_lr: 0.00005
+  weight_decay: 0.0001
+  grad_clip_norm: 5.0
+  amp: true
+  eval_interval: 1
+
+eval:
+  threshold: 0.9
+  pd_eta: 0.0001
+  pd_slice_ms: 50
+  metric_grid: [96, 72, 48]
+  metric_dilation_steps: 1
+  cldice_skeleton_iterations: 10
+  binary_skeleton_threshold: 0.1
+  event_query_chunk: 65536
