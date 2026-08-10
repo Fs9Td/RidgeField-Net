@@ -5,7 +5,7 @@ This repository provides the implementation of **RidgeField-Net: Continuous Spat
 RidgeField-Net models tiny-UAV trajectories as a continuously queryable spatio-temporal tube probability field. The framework combines a sparse 3D encoder with the **Local-Conditioned Implicit Tube Field (LITF)**, **Patch-wise Skeleton Consistency (PSC)**, and volumetric sparsity regularization to recover sparse and fragmented target trajectories while suppressing complex background interference.
 
 For this release, we further optimized several implementation and training details to improve convergence, training stability, and overall segmentation performance. The released checkpoint corresponds to our current optimized configuration.
-
+![RidgeField-Net Overview](overview.png)
 ## Requirements
 
 The released checkpoint and scripts were verified with:
