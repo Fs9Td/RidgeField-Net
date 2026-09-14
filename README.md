@@ -132,8 +132,6 @@ Evaluation on the **24-sequence EV-UAV test split** gives:
 | Fa (×10⁻⁴) ↓ | **0.201** |
 | Frag ↓       | **1.048** |
 
-These results are obtained using the released checkpoint and the fixed evaluation protocol described above.
-
 We further optimized several implementation and training details, including optimization strategy, training stability, and model configuration, while preserving the core RidgeField-Net framework consisting of the sparse 3D encoder, LITF, PSC, and volumetric sparsity regularization.
 
 
