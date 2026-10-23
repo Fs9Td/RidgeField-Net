@@ -1,4 +1,4 @@
-# RidgeField-Net: Continuous Spatio-Temporal Tube Fields for Tiny UAV Detection in Event Streams
+# RidgeField-Net: Continuous Spatio-Temporal Tube Fields for Tiny UAV Detection in Event Streams（ACMMM2026）
 
 This repository provides the implementation of **RidgeField-Net: Continuous Spatio-Temporal Tube Fields for Tiny UAV Detection in Event Streams** on the EV-UAV dataset.
 
